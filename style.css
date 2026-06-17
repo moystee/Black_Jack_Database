@@ -1,1 +1,21 @@
-# Add css code here
+body {
+    font-family: Georgia, serif;
+    text-align: center;
+    margin-top: 50px;
+}
+
+h1 {
+    color: darkgreen;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+#message {
+    margin-top: 20px;
+    font-weight: bold;
+}
