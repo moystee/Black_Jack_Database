@@ -4,6 +4,7 @@ const message = document.getElementById("message");
 
 startButton.addEventListener("click", function () {
     message.textContent = "Starting game...";
+    window.open("game.html", "_blank");
 });
 
 joinButton.addEventListener("click", function () {
