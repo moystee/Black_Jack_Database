@@ -8,11 +8,11 @@ Edge Case:
 
   -If the user clicks Start New Game, the Blackjack game screen will open and the page will display:
 
-  "Starting game..."
+  **"Starting game..."**
   
   -If the user clicks Join Existing Game and no prior games exist, the page will display: 
   
-  "No existing games found. Please start a new game."
+  **"No existing games found. Please start a new game."**
   
 Current Implementation:
 - Join Existing Game always displays: "No existing games found. Please start a new game."
