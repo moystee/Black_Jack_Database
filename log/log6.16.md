@@ -1,5 +1,7 @@
 Notes on 6/16:
 
+## Home Screen
+
 First Draft: Create a home screen with two buttons:
 - Start New Game
 - Join Existing Game
@@ -40,3 +42,4 @@ Image:
 <img width="582" height="225" alt="image" src="https://github.com/user-attachments/assets/a487d3ba-16bb-47dd-98d3-8fa48e77033b" />
 
 <img width="588" height="216" alt="image" src="https://github.com/user-attachments/assets/63f92080-f551-4e63-a080-b0f59b560263" />
+
