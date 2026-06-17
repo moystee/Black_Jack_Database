@@ -3,7 +3,7 @@
 ## Goal
 Build a web app for Blackjack using vanilla JavaScript, with user accounts and game data saved in a database.
 
-## Tech Stack
+## Details
 - Frontend: HTML, CSS, Vanilla JavaScript
 - Database: Supabase
 - Hosting: Render
