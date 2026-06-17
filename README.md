@@ -41,9 +41,9 @@ This table stores each Blackjack game that was played.
 2. Create README.md.
 3. Create BRAINSTORM.md.
 4. Create the basic frontend files:
-  1. index.html
-  2. style.css
-  3. script.js
+  - index.html
+  - style.css
+  - - script.js
   
 
 
