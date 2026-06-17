@@ -1,1 +1,20 @@
-# add game css code here
+body {
+    font-family: Georgia, serif;
+    background-color: #0b3d2e;
+    color: white;
+    text-align: center;
+}
+
+h1 {
+    color: gold;
+}
+
+button {
+    padding: 10px;
+    margin: 10px;
+    border-radius: 8px;
+}
+
+#splitButton:disabled {
+    opacity: 0.5;
+}
