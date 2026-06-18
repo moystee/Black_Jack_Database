@@ -28,3 +28,37 @@ button:not(:disabled):hover {
     cursor: not-allowed;
 }
 
+/* Exit pop-up screen */
+
+#exitPopup {
+    background-color: #1b4332;
+
+    border: 3px solid gold;
+    border-radius: 12px;
+
+    padding: 25px;
+
+    width: 350px;
+
+    margin: 20px auto;
+
+    text-align: center;
+
+    box-shadow: 0px 0px 20px black;
+}
+
+#exitPopup h3 {
+    color: gold;
+}
+
+#exitPopup button {
+    display: block;
+
+    margin: 10px auto;
+
+    width: 200px;
+}
+
+
+
+
