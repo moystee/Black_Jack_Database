@@ -23,3 +23,7 @@ button:hover {
 #splitButton:disabled {
     opacity: 0.5;
 }
+
+.hand {
+    letter-spacing: 8px;
+}
