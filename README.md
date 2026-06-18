@@ -48,8 +48,9 @@ This table stores each Blackjack game that was played.
     - game.html
     - game.css
     - game.js
-5. Hardcode and test card values.
-6. Create exit pop-up screen.
+5. Connect home page navigation to game page.
+6. Hardcode and test card values.
+7. Create exit pop-up screen.
   
 
 
