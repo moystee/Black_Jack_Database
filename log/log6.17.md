@@ -58,6 +58,8 @@ Next, I hardcoded values to Blackjack hands and scores:
 
 ## Exit Screen:
 
+First Draft: Create the exit pop-up screen that can route back to the home screen.
+
 Current Exit Behavior:
 
 - Save and Exit closes the game tab.
