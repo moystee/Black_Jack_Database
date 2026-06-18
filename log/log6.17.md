@@ -56,7 +56,7 @@ Next, I hardcoded values to Blackjack hands and scores:
 
 <img width="2880" height="970" alt="image" src="https://github.com/user-attachments/assets/0be93324-1c3d-4d3f-a94d-ffddd2ad802f" />
 
-Next, added the exit pop-up screen:
+## Exit Screen:
 
 Current Exit Behavior:
 
