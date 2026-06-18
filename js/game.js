@@ -31,10 +31,10 @@ exitButton.addEventListener("click", function () {
 const dealerCards = ["K", "?"];
 const playerCards = ["10", "7"];
 
-dealerHand.textContent = "Dealer Hand: " + dealerCards.join("     ");
+dealerHand.textContent = dealerCards.join(" ");
 dealerScore.textContent = "Dealer Score: 10";
 
-playerHand.textContent = "Player Hand: " + playerCards.join("     ");
+playerHand.textContent = playerCards.join(" ");
 playerScore.textContent = "Player Score: 17";
 
 gameMessage.textContent = "Game started. Good luck! 😄";
