@@ -56,8 +56,17 @@ Next, I hardcoded values to Blackjack hands and scores:
 
 <img width="2880" height="970" alt="image" src="https://github.com/user-attachments/assets/0be93324-1c3d-4d3f-a94d-ffddd2ad802f" />
 
+Next, added the exit pop-up screen:
 
+Current Exit Behavior:
 
+- Save and Exit closes the game tab.
+- Exit Without Saving closes the game tab.
+
+Future Behavior:
+
+- Save and Exit saves game state to the database before closing.
+- Exit Without Saving discards game state and closes the tab.
 
 
 
