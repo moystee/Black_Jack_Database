@@ -68,6 +68,7 @@ Future Behavior:
 - Save and Exit saves game state to the database before closing.
 - Exit Without Saving discards game state and closes the tab.
 
+<img width="2850" height="1546" alt="image" src="https://github.com/user-attachments/assets/37f83141-48f9-4562-9524-d4b75934cd0e" />
 
 
 
