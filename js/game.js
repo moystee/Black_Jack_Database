@@ -16,6 +16,8 @@ const saveExitButton = document.getElementById("saveExitButton");
 const nosaveExitButton = document.getElementById("nosaveExitButton");
 const cancelExitButton = document.getElementById("cancelExitButton");
 
+/////////////////////////////////////////////////////////////////
+
 hitButton.addEventListener("click", function () {
     gameMessage.textContent = "Hit button clicked.";
 });
