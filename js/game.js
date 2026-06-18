@@ -23,7 +23,11 @@ splitButton.addEventListener("click", function () {
 });
 
 exitButton.addEventListener("click", function () {
-    gameMessage.textContent = "Exit button clicked.";
+    exitPopup.hidden = false;
+});
+
+cancelExitButton.addEventListener("click", function () {
+    exitPopup.hidden = true;
 });
 
 /////////////////////////////////////////////////////////////////
