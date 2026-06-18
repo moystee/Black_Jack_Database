@@ -52,6 +52,9 @@ First, I created the game screen and buttons without game logic:
 
 Next, I hardcoded values to Blackjack hands and scores:
 
+**Note:** I ran into an issue with spacing each card value, so instead I solved this using `|` rather than multiple spaces.
+
+<img width="2880" height="970" alt="image" src="https://github.com/user-attachments/assets/0be93324-1c3d-4d3f-a94d-ffddd2ad802f" />
 
 
 
