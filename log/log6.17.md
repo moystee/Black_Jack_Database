@@ -45,3 +45,26 @@ Design plan: When the user starts or joins a game, they will navigate from `home
 home.html -> Home screen.
 
 game.html  -> Blackjack game.
+
+First, I created the game screen and buttons without game logic:
+
+<img width="2878" height="1018" alt="image" src="https://github.com/user-attachments/assets/67817787-0bad-4127-b087-8132fef87879" />
+
+Next, I hardcoded values to Blackjack hands and scores:
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
