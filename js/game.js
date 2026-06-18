@@ -10,6 +10,12 @@ const dealerScore = document.getElementById("dealerScore");
 const playerHand = document.getElementById("playerHand");
 const playerScore = document.getElementById("playerScore");
 
+const exitPopup = document.getElementById("exitPopup");
+
+const saveExitButton = document.getElementById("saveExitButton");
+const nosaveExitButton = document.getElementById("nosaveExitButton");
+const cancelExitButton = document.getElementById("cancelExitButton");
+
 hitButton.addEventListener("click", function () {
     gameMessage.textContent = "Hit button clicked.";
 });
@@ -24,6 +30,14 @@ splitButton.addEventListener("click", function () {
 
 exitButton.addEventListener("click", function () {
     exitPopup.hidden = false;
+});
+
+saveExitButton.addEventListener("click", function () {
+    window.close();
+});
+
+nosaveExitButton.addEventListener("click", function () {
+    window.close();
 });
 
 cancelExitButton.addEventListener("click", function () {
