@@ -40,10 +40,16 @@ This table stores each Blackjack game that was played.
 1. Create GitHub repository.
 2. Create README.md.
 3. Create BRAINSTORM.md.
-4. Create the frontend files:
-    - index.html
-    - style.css
-    - script.js
+4. Create the frontend home page files:
+    - home.html
+    - home.css
+    - home.js
+4. Create the frontend game page files:
+    - game.html
+    - game.css
+    - game.js
+5. Hardcode and test card values.
+
   
 
 
