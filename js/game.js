@@ -26,7 +26,7 @@ exitButton.addEventListener("click", function () {
     gameMessage.textContent = "Exit button clicked.";
 });
 
------------------------------------------------------------------
+/////////////////////////////////////////////////////////////////
 
 const dealerCards = ["K", "?"];
 const playerCards = ["10", "7"];
