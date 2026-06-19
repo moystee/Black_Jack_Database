@@ -17,6 +17,8 @@ const nosaveExitButton = document.getElementById("nosaveExitButton");
 const cancelExitButton = document.getElementById("cancelExitButton");
 
 /////////////////////////////////////////////////////////////////
+// Button Functions
+/////////////////////////////////////////////////////////////////
 
 hitButton.addEventListener("click", function () {
     gameMessage.textContent = "Hit button clicked.";
@@ -46,6 +48,8 @@ cancelExitButton.addEventListener("click", function () {
     exitPopup.hidden = true;
 });
 
+/////////////////////////////////////////////////////////////////
+// Dealer + Player Score Display
 /////////////////////////////////////////////////////////////////
 
 const dealerCards = ["K", "?"];
@@ -89,14 +93,34 @@ for (const suit of suits) {
     }
 }
 
+// Tests:
 console.log(deck);
 console.log("Deck size:", deck.length);
 
+/////////////////////////////////////////////////////////////////
+// Shuffle/Randomize Deck
+/////////////////////////////////////////////////////////////////
 
+function shuffleDeck(deck) {
 
+    // Start from the last card
+    for (let i = deck.length - 1; i > 0; i--) {
 
+        // Pick a random card between 0 and i
+        const randomIndex = Math.floor(Math.random() * (i + 1));
 
+        // Swap the cards
+        const temporaryCard = deck[i]; // saves card temporarily
+        deck[i] = deck[randomIndex]; // puts random card in current position
+        deck[randomIndex] = temporaryCard; // puts temp card in random card's old position
+    }
+}
 
+shuffleDeck(deck);
+
+// Tests:
+console.log(deck);
+console.log("Deck size:", deck.length);
 
 
 
