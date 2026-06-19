@@ -43,8 +43,19 @@ Randomization Idea:
 
 <img width="508" height="908" alt="image" src="https://github.com/user-attachments/assets/7fff1f1c-dc24-420e-9ffe-78211b6ab1fb" />
 
+Third Draft: Deal the starting dealer and player hands.
 
+Requirements:
+- Use the first 4 cards from the shuffled deck.
+- Deal first and third card to the player.
+- Deal second and fourth card to the dealer.
+- Remove dealt cards from the deck.
+- Display the player's two cards.
+- Display one dealer card and hide the second dealer card with ?.
 
+Expected Display Example:
+- Dealer Hand: K | ?
+- Player Hand: 10 | 7
 
 
 
