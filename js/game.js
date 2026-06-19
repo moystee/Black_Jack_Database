@@ -132,7 +132,7 @@ function calculateScore(cards) {
     let aceCount = 0; // counts aces = 11 by default
 
     for (const card of cards) {
-        const value = card.slice(0, -1); // remove suit symbol
+        const value = card.replace(/[♥️♦️♣️♠️]/g, ""); // remove all suit symbols
 
         if (value === "A") {
             score += 11;
