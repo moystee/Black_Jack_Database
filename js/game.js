@@ -21,7 +21,15 @@ const cancelExitButton = document.getElementById("cancelExitButton");
 /////////////////////////////////////////////////////////////////
 
 hitButton.addEventListener("click", function () {
-    gameMessage.textContent = "Hit button clicked.";
+    const newCard = deck.shift(); // takes first card fom deck
+
+    playerCards.push(newCard); // pushes that card to player hand
+
+    playerHand.textContent = playerCards.join(" | "); // add the | separator between cards
+
+    playerScore.textContent = "Player Score: " + calculateScore(playerCards); // calculate new score
+
+    gameMessage.textContent = "You drew: " + newCard; // display the card drawn
 });
 
 standButton.addEventListener("click", function () {
