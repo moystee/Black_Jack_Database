@@ -175,11 +175,20 @@ function calculateScore(cards) {
     return score;
 }
 
-playerScore.textContent = "Player Score: " + calculateScore(playerCards);
 dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
 
-gameMessage.textContent = "Game started. Good luck! 😄";
+const startingPlayerTotal = calculateScore(playerCards);
 
+playerScore.textContent = "Player Score: " + startingPlayerTotal;
+
+dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
+
+if (startingPlayerTotal === 21) {
+    gameMessage.textContent = "Blackjack!";
+    hitButton.disabled = true;
+} else {
+    gameMessage.textContent = "Game started. Good luck! 😁";
+}
 
 
 
