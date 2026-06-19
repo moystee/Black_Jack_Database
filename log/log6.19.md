@@ -1,6 +1,8 @@
 Notes on 6/19:
 
-First Draft: Hit Button should give 1 card to player.
+## Hit Button
+
+First Draft: **Hit Button** should give 1 card to player.
 
 Requirements:
 - When the Hit button is clicked, the player receives the next card from the deck.
@@ -29,10 +31,15 @@ Potential Edge Cases:
 
 <img width="1046" height="970" alt="image" src="https://github.com/user-attachments/assets/941f0b82-1c23-4b86-9b78-cb69abc418a2" />
 
+## Stand Button
 
-
-
-
+Draft 2: **Stand Button** should make it the dealer's turn.
+- Reveal dealer's hidden card.
+- Calculate full dealer score.
+- Disable Hit and Split.
+- Let dealer draw until reaching at least 17.
+- Compare player and dealer scores.
+- Display win, loss, or tie message.
 
 
 
