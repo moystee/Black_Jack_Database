@@ -29,7 +29,18 @@ hitButton.addEventListener("click", function () {
 
     playerScore.textContent = "Player Score: " + calculateScore(playerCards); // calculate new score
 
-    gameMessage.textContent = "You drew: " + newCard; // display the card drawn
+    const playerTotal = calculateScore(playerCards); // save value
+
+    if (playerTotal > 21) { // display is based on new score 
+        gameMessage.textContent = "Bust!";
+        hitButton.disabled = true; // cannot Hit after Bust
+    } else if (playerTotal === 21) {
+        gameMessage.textContent = "21!";
+        hitButton.disabled = true; // cannot Hit after 21
+    } else {
+        gameMessage.textContent = "You drew: " + newCard;
+    }
+    
 });
 
 standButton.addEventListener("click", function () {
