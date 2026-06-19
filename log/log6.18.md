@@ -37,9 +37,9 @@ Requirements:
 Randomization Idea:
 - Start at the end of the deck.
 - Pick a random card from positions 0 through current position.
-- Swap.
+- Swap the two cards.
 - Move one position left.
-- Repeat.
+- Repeat many times.
 
 <img width="508" height="908" alt="image" src="https://github.com/user-attachments/assets/7fff1f1c-dc24-420e-9ffe-78211b6ab1fb" />
 
@@ -56,6 +56,22 @@ Requirements:
 Expected Display Example:
 - Dealer Hand: K | ?
 - Player Hand: 10 | 7
+
+<img width="749" height="774" alt="image" src="https://github.com/user-attachments/assets/7766c74a-8e3b-400e-b510-70a3bc4f9666" />
+
+Fourth Draft: Calculate the starting dealer and player hand scores.
+
+Requirements:
+- Number cards count as their face value.
+- Face cards (J, Q, K) count as 10.
+- Ace counts as 11 by default.
+- If counting an Ace as 11 causes a bust, it becomes 1.
+- Display player score.
+- Display dealer score.
+
+Expected Example:
+- A | K
+- Score: 21
 
 
 
