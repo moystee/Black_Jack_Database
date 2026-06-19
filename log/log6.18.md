@@ -73,6 +73,10 @@ Expected Example:
 - A | K
 - Score: 21
 
+<img width="739" height="776" alt="image" src="https://github.com/user-attachments/assets/6b26e2c4-784b-4030-9381-975a6d6bd799" />
+
+
+
 
 
 
