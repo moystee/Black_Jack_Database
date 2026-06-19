@@ -24,10 +24,22 @@ Deck Behavior:
 - A card can only be dealt once per game.
 - A new game creates a fresh deck.
 
+<img width="556" height="1021" alt="image" src="https://github.com/user-attachments/assets/a2fc3071-c533-4706-b380-c99f7e6f38e6" />
 
+Second Draft: Create deck shuffle functionality.
 
+Requirements:
+- Shuffle all 52 cards.
+- Each card should have an equal chance of appearing anywhere in the deck.
+- Deck size must remain 52 after shuffling.
+- No cards should be duplicated or lost.
 
-
+Randomization Idea:
+- Start at the end of the deck.
+- Pick a random card from positions 0 through current position.
+- Swap.
+- Move one position left.
+- Repeat.
 
 
 
