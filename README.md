@@ -4,7 +4,7 @@
 Build a web app for Blackjack using vanilla JavaScript, with user accounts and game data saved in a database.
 
 ## Details
-- Frontend: HTML, CSS, Vanilla JavaScript
+- Languages: HTML, CSS, Vanilla JavaScript
 - Database: Supabase
 - Hosting: Render
 - Version Control: GitHub
@@ -40,19 +40,21 @@ This table stores each Blackjack game that was played.
 1. Create GitHub repository.
 2. Create README.md.
 3. Create BRAINSTORM.md.
-4. Create the frontend home page files:
+4. Create the home page files:
     - home.html
     - home.css
     - home.js
-4. Create the frontend game page files:
+4. Create the game page files:
     - game.html
     - game.css
     - game.js
-5. Connect home page navigation to game page.
-6. Hardcode and test card values.
-7. Create exit pop-up screen.
-  
-
+5. Connect home page to game page.
+6. Temporary hardcode and test card and button values.
+7. Create exit pop-up screen to connect game page back to home page.
+8. Create a standard 52-card Blackjack deck.
+9. Add and test deck shuffling.
+10. Deal starting player + dealer hands from the shuffled deck and display on game screen.
+11. Calculate and display starting hand scores.
 
 
 
