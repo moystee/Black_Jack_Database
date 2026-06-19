@@ -123,8 +123,36 @@ dealerCards.push(deck.shift()); // 4th card
 playerHand.textContent = playerCards.join(" | ");
 dealerHand.textContent = dealerCards[0] + " | ?";
 
-dealerScore.textContent = "Dealer Score: ?";
-playerScore.textContent = "Player Score: ?";
+/////////////////////////////////////////////////////////////////
+// Calculate Starting Hand Score
+/////////////////////////////////////////////////////////////////
+
+function calculateScore(cards) {
+    let score = 0;
+    let aceCount = 0; // counts aces = 11 by default
+
+    for (const card of cards) {
+        const value = card.slice(0, -1); // remove suit symbol
+
+        if (value === "A") {
+            score += 11;
+            aceCount++;
+        } else if (value === "J" || value === "Q" || value === "K") {
+            score += 10;
+        } else {
+            score += Number(value); // integerizes value
+        }
+    }
+
+    while (score > 21 && aceCount > 0) { // if bust and has ace = 11
+        score -= 10; // change ace = 11 -> 1
+        aceCount--; // 1 less ace = 11
+    }
+    return score;
+}
+
+playerScore.textContent = "Player Score: " + calculateScore(playerCards);
+dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
 
 gameMessage.textContent = "Game started. Good luck! 😄";
 
