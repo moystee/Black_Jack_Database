@@ -123,6 +123,11 @@ dealerCards.push(deck.shift()); // 4th card
 playerHand.textContent = playerCards.join(" | ");
 dealerHand.textContent = dealerCards[0] + " | ?";
 
+// Tests:
+// console.log("Player Cards:", playerCards);
+// console.log("Dealer Cards:", dealerCards);
+// console.log("Cards Remaining:", deck.length);
+
 /////////////////////////////////////////////////////////////////
 // Calculate Starting Hand Score
 /////////////////////////////////////////////////////////////////
@@ -156,10 +161,6 @@ dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
 
 gameMessage.textContent = "Game started. Good luck! 😄";
 
-// Tests:
-// console.log("Player Cards:", playerCards);
-// console.log("Dealer Cards:", dealerCards);
-// console.log("Cards Remaining:", deck.length);
 
 
 
