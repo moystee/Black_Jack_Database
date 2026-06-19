@@ -94,8 +94,8 @@ for (const suit of suits) {
 }
 
 // Tests:
-console.log(deck);
-console.log("Deck size:", deck.length);
+console.log("Deck before shuffle:", [...deck]);
+console.log("Deck size before shuffle:", deck.length);
 
 /////////////////////////////////////////////////////////////////
 // Shuffle/Randomize Deck
@@ -119,8 +119,8 @@ function shuffleDeck(deck) {
 shuffleDeck(deck);
 
 // Tests:
-console.log(deck);
-console.log("Deck size:", deck.length);
+console.log("Deck after shuffle:", [...deck]);
+console.log("Deck size after shuffle:", deck.length);
 
 
 
