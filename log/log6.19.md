@@ -19,6 +19,11 @@ After Hit:
 - Player Hand: 10 | 7 | 2
 - Player Score: 19
 
+Potential Edge Cases:
+- Player reaches exactly 21 after a Hit.
+- Player Busts after a Hit.
+- Player immediately has two cards that add to 21.
+
 
 
 
