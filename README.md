@@ -56,6 +56,6 @@ This table stores each Blackjack game that was played.
 10. Deal starting player + dealer hands from the shuffled deck and display on game screen.
 11. Calculate and display starting hand scores.
 12. Add and test Hit Button functionality.
-
+13. Add and test Stand Button functionality.
 
 
