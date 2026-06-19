@@ -24,7 +24,7 @@ Deck Behavior:
 - A card can only be dealt once per game.
 - A new game creates a fresh deck.
 
-<img width="556" height="1021" alt="image" src="https://github.com/user-attachments/assets/a2fc3071-c533-4706-b380-c99f7e6f38e6" />
+<img width="511" height="907" alt="image" src="https://github.com/user-attachments/assets/894d3b64-1415-4549-a1cc-5ab618c21948" />
 
 Second Draft: Create deck shuffle functionality.
 
@@ -41,6 +41,7 @@ Randomization Idea:
 - Move one position left.
 - Repeat.
 
+<img width="508" height="908" alt="image" src="https://github.com/user-attachments/assets/7fff1f1c-dc24-420e-9ffe-78211b6ab1fb" />
 
 
 
