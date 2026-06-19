@@ -94,8 +94,8 @@ for (const suit of suits) {
 }
 
 // Tests:
-console.log("Deck before shuffle:", [...deck]);
-console.log("Deck size before shuffle:", deck.length);
+// console.log("Deck before shuffle:", [...deck]);
+// console.log("Deck size before shuffle:", deck.length);
 
 /////////////////////////////////////////////////////////////////
 // Shuffle/Randomize Deck
@@ -119,14 +119,26 @@ function shuffleDeck(deck) {
 shuffleDeck(deck);
 
 // Tests:
-console.log("Deck after shuffle:", [...deck]);
-console.log("Deck size after shuffle:", deck.length);
+// console.log("Deck after shuffle:", [...deck]);
+// console.log("Deck size after shuffle:", deck.length);
 
+/////////////////////////////////////////////////////////////////
+// Create Starting Hands
+/////////////////////////////////////////////////////////////////
 
+const playerCards = [];
+const dealerCards = [];
 
+// shift() removes and returns the first card in the deck.
+playerCards.push(deck.shift()); // 1st card
+dealerCards.push(deck.shift()); // 2nd card
+playerCards.push(deck.shift()); // 3rd card
+dealerCards.push(deck.shift()); // 4th card
 
-
-
+// Tests:
+console.log("Player Cards:", playerCards);
+console.log("Dealer Cards:", dealerCards);
+console.log("Cards Remaining:", deck.length);
 
 
 
