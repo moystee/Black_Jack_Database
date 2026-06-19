@@ -23,6 +23,7 @@ Potential Edge Cases:
 - Player reaches exactly 21 after a Hit.
 - Player Busts after a Hit.
 - Player immediately has two cards that add to 21.
+- Player cannot Hit after Bust or Blackjack.
 
 
 
