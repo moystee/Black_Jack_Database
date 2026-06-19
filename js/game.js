@@ -49,21 +49,6 @@ cancelExitButton.addEventListener("click", function () {
 });
 
 /////////////////////////////////////////////////////////////////
-// Dealer + Player Score Display
-/////////////////////////////////////////////////////////////////
-
-// const dealerCards = ["K", "?"];
-// const playerCards = ["10", "7"];
-
-// dealerHand.textContent = dealerCards.join(" | ");
-// dealerScore.textContent = "Dealer Score: 10";
-
-// playerHand.textContent = playerCards.join(" | ");
-// playerScore.textContent = "Player Score: 17";
-
-gameMessage.textContent = "Game started. Good luck! 😄";
-
-/////////////////////////////////////////////////////////////////
 // Deck Creation
 /////////////////////////////////////////////////////////////////
 
@@ -135,11 +120,18 @@ dealerCards.push(deck.shift()); // 2nd card
 playerCards.push(deck.shift()); // 3rd card
 dealerCards.push(deck.shift()); // 4th card
 
-// Tests:
-console.log("Player Cards:", playerCards);
-console.log("Dealer Cards:", dealerCards);
-console.log("Cards Remaining:", deck.length);
+playerHand.textContent = playerCards.join(" | ");
+dealerHand.textContent = dealerCards[0] + " | ?";
 
+dealerScore.textContent = "Dealer Score: ?";
+playerScore.textContent = "Player Score: ?";
+
+gameMessage.textContent = "Game started. Good luck! 😄";
+
+// Tests:
+// console.log("Player Cards:", playerCards);
+// console.log("Dealer Cards:", dealerCards);
+// console.log("Cards Remaining:", deck.length);
 
 
 
