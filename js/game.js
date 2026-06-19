@@ -52,14 +52,14 @@ cancelExitButton.addEventListener("click", function () {
 // Dealer + Player Score Display
 /////////////////////////////////////////////////////////////////
 
-const dealerCards = ["K", "?"];
-const playerCards = ["10", "7"];
+// const dealerCards = ["K", "?"];
+// const playerCards = ["10", "7"];
 
-dealerHand.textContent = dealerCards.join(" | ");
-dealerScore.textContent = "Dealer Score: 10";
+// dealerHand.textContent = dealerCards.join(" | ");
+// dealerScore.textContent = "Dealer Score: 10";
 
-playerHand.textContent = playerCards.join(" | ");
-playerScore.textContent = "Player Score: 17";
+// playerHand.textContent = playerCards.join(" | ");
+// playerScore.textContent = "Player Score: 17";
 
 gameMessage.textContent = "Game started. Good luck! 😄";
 
