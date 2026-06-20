@@ -36,7 +36,7 @@ Potential Edge Cases:
 Draft 2: **Stand Button** should make it the dealer's turn.
 - Reveal dealer's hidden card.
 - Calculate full dealer score.
-- Disable Hit and Split.
+- Disable Hit, Split, and Stand.
 - Let dealer draw until reaching at least 17.
 - Compare player and dealer scores.
 - Display win, loss, or tie message.
