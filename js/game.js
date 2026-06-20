@@ -32,6 +32,7 @@ hitButton.addEventListener("click", function () {
     const playerTotal = calculateScore(playerCards); // save value
 
     if (playerTotal > 21) { // display is based on new score 
+        gameMessage.textContent = "Bust!";
         hitButton.disabled = true;
         standButton.disabled = true;
         splitButton.disabled = true;
