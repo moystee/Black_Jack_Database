@@ -41,9 +41,23 @@ Draft 2: **Stand Button** should make it the dealer's turn.
 - Compare player and dealer scores.
 - Display win, loss, or tie message.
 
+<img width="890" height="960" alt="image" src="https://github.com/user-attachments/assets/7a047fa2-e90c-4d71-a844-71bf3c7de0f7" />
 
+Draft 3: Dealer Turn Logic
 
+Requirements:
 
+- After Stand is clicked, reveal dealer's hidden card.
+- Dealer draws cards until reaching at least 17.
+- Dealer's hand display updates after each draw.
+- Dealer's score updates after each draw.
+- Dealer stops drawing when score is 17 or higher.
+- 
+Expected Example:
+
+Dealer Score: 14 -> Dealer draws 5 -> Dealer Score: 19 -> Dealer stops.
+
+Future Improvement: Add short delay between dealer draws so user can see the dealer's actions.
 
 
 
