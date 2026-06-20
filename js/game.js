@@ -43,7 +43,6 @@ hitButton.addEventListener("click", function () {
     } else {
         gameMessage.textContent = "You drew: " + newCard;
     }
-    
 });
 
 standButton.addEventListener("click", function () {
@@ -83,6 +82,7 @@ standButton.addEventListener("click", function () {
     } else {
         gameMessage.textContent = "Push. It's a tie!";
     }
+});
 
 splitButton.addEventListener("click", function () {
     gameMessage.textContent = "Split button clicked.";
@@ -217,8 +217,6 @@ dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
 const startingPlayerTotal = calculateScore(playerCards);
 
 playerScore.textContent = "Player Score: " + startingPlayerTotal;
-
-dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
 
 if (startingPlayerTotal === 21) {
     gameMessage.textContent = "Blackjack!";
