@@ -65,17 +65,24 @@ standButton.addEventListener("click", function () {
 
     const playerTotal = calculateScore(playerCards);
     const dealerTotal = calculateScore(dealerCards);
-    
-    if (dealerTotal > 21) {
-        gameMessage.textContent = "Dealer busts. Player wins!";
+
+    const playerBlackjack = playerCards.length === 2 && calculateScore(playerCards) === 21;
+
+    const dealerBlackjack = dealerCards.length === 2 && calculateScore(dealerCards) === 21;
+
+    if (playerBlackjack && dealerBlackjack) {
+        gameMessage.textContent = "Blackjack! Push. It's a tie!";
+    } else if (playerBlackjack) {
+        gameMessage.textContent = "Blackjack! Player wins!";
+    } else if (dealerTotal > 21) {
+        gameMessage.textContent = "Bust! Player wins!";
     } else if (playerTotal > dealerTotal) {
         gameMessage.textContent = "Player wins!";
     } else if (dealerTotal > playerTotal) {
-        gameMessage.textContent = "Dealer wins.";
+        gameMessage.textContent = "Dealer wins!";
     } else {
         gameMessage.textContent = "Push. It's a tie!";
     }
-});
 
 splitButton.addEventListener("click", function () {
     gameMessage.textContent = "Split button clicked.";
