@@ -51,6 +51,15 @@ standButton.addEventListener("click", function () {
     hitButton.disabled = true; // disable Hit button
     splitButton.disabled = true; // disable Split button
 
+    while (calculateScore(dealerCards) < 17) {
+        dealerCards.push(deck.shift());
+    }
+
+    dealerHand.textContent = dealerCards.join(" | ");
+
+    dealerScore.textContent =
+        "Dealer Score: " + calculateScore(dealerCards);
+
     gameMessage.textContent = "Dealer's turn."; // disable Player's turn
 });
 
