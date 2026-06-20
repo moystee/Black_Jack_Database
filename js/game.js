@@ -73,7 +73,7 @@ standButton.addEventListener("click", function () {
     } else if (dealerTotal > playerTotal) {
         gameMessage.textContent = "Dealer wins.";
     } else {
-        gameMessage.textContent = "Push. It's a tie.";
+        gameMessage.textContent = "Push. It's a tie!";
     }
 });
 
