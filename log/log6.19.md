@@ -79,6 +79,7 @@ Editor Notes:
 - Addressed the issue of the dealer's turn not occurring when I press the Hit button and I achieve 21.
 - Fixed the issue of being able to click the Stand button even after busting from the Hit button.
 
+<img width="992" height="940" alt="image" src="https://github.com/user-attachments/assets/ce3e4622-9e77-4f92-bd9c-14c20cf7e1d4" />
 
 
 
