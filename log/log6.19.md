@@ -75,7 +75,9 @@ Expected Example Scenarios:
 - Dealer Score: 20, Player Score: 18 -> Dealer wins.
 - Dealer Score: 19, Player Score: 19 -> Push.
 
-
+Editor Notes:
+- Addressed the issue of the dealer's turn not occurring when I press the Hit button and I achieve 21.
+- Fixed the issue of being able to click the Stand button even after busting from the Hit button.
 
 
 
