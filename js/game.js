@@ -216,6 +216,7 @@ dealerScore.textContent = "Dealer Score: " + calculateScore([dealerCards[0]]);
 if (startingPlayerTotal === 21) {
     gameMessage.textContent = "Blackjack!";
     hitButton.disabled = true;
+    splitButton.disabled = true;
 } else {
     gameMessage.textContent = "Game started. Good luck! 😁";
 }
