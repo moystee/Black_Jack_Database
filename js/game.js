@@ -44,7 +44,14 @@ hitButton.addEventListener("click", function () {
 });
 
 standButton.addEventListener("click", function () {
-    gameMessage.textContent = "Stand button clicked.";
+    dealerHand.textContent = dealerCards.join(" | "); // gets rid of ?
+
+    dealerScore.textContent = "Dealer Score: " + calculateScore(dealerCards); // adds mystery card
+
+    hitButton.disabled = true; // disable Hit button
+    splitButton.disabled = true; // disable Split button
+
+    gameMessage.textContent = "Dealer's turn."; // disable Player's turn
 });
 
 splitButton.addEventListener("click", function () {
