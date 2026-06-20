@@ -50,6 +50,7 @@ standButton.addEventListener("click", function () {
 
     hitButton.disabled = true; // disable Hit button
     splitButton.disabled = true; // disable Split button
+    standButton.disabled = true; // disable Stand button
 
     while (calculateScore(dealerCards) < 17) {
         dealerCards.push(deck.shift());
@@ -57,10 +58,20 @@ standButton.addEventListener("click", function () {
 
     dealerHand.textContent = dealerCards.join(" | ");
 
-    dealerScore.textContent =
-        "Dealer Score: " + calculateScore(dealerCards);
+    dealerScore.textContent = "Dealer Score: " + calculateScore(dealerCards);
 
-    gameMessage.textContent = "Dealer's turn."; // disable Player's turn
+    const playerTotal = calculateScore(playerCards);
+    const dealerTotal = calculateScore(dealerCards);
+    
+    if (dealerTotal > 21) {
+        gameMessage.textContent = "Dealer busts. Player wins!";
+    } else if (playerTotal > dealerTotal) {
+        gameMessage.textContent = "Player wins!";
+    } else if (dealerTotal > playerTotal) {
+        gameMessage.textContent = "Dealer wins.";
+    } else {
+        gameMessage.textContent = "Push. It's a tie.";
+    }
 });
 
 splitButton.addEventListener("click", function () {
