@@ -38,7 +38,7 @@ Player: A | K
 
 Dealer: A | Q
 
-Result: Push.
+Result: Push. It's a tie!
 
 
 
