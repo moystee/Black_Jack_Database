@@ -30,15 +30,18 @@ Expected Examples:
 
 Player: A | K
 
-Dealer: 5 | K | A | 5
+Dealer: 5 | K | 6
 
-Result: Player wins!
+Result: Blackjack! Player wins!
 
 Player: A | K
 
 Dealer: A | Q
 
 Result: Push. It's a tie!
+
+<img width="597" height="488" alt="image" src="https://github.com/user-attachments/assets/bbd2f9b9-2cd8-4460-b20c-96767842b9b7" />
+
 
 
 
