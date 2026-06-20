@@ -59,6 +59,32 @@ Dealer Score: 14 -> Dealer draws 5 -> Dealer Score: 19 -> Dealer stops.
 
 Future Improvement: Add short delay between dealer draws so user can see the dealer's actions.
 
+<img width="978" height="970" alt="image" src="https://github.com/user-attachments/assets/4c1af14d-1023-4c50-a0a1-15c3d92b5665" />
+
+Draft 4: Determine Game Result after the Dealer's turn
+
+Requirements:
+- If dealer score is over 21, player wins.
+- If player score is greater than dealer score, player wins.
+- If dealer score is greater than player score, dealer wins.
+- If both scores are equal, the result is a tie/push.
+
+Expected Example Scenarios:
+- Dealer Score: 25, Player Score: 19 -> Dealer busts. Player wins.
+- Dealer Score: 18, Player Score: 20 -> Player wins.
+- Dealer Score: 20, Player Score: 18 -> Dealer wins.
+- Dealer Score: 19, Player Score: 19 -> Push.
+
+
+
+
+
+
+
+
+
+
+
 
 
 
