@@ -32,11 +32,13 @@ hitButton.addEventListener("click", function () {
     const playerTotal = calculateScore(playerCards); // save value
 
     if (playerTotal > 21) { // display is based on new score 
-        gameMessage.textContent = "Bust!";
-        hitButton.disabled = true; // cannot Hit after Bust
+        hitButton.disabled = true;
+        standButton.disabled = true;
+        splitButton.disabled = true;
     } else if (playerTotal === 21) {
-        gameMessage.textContent = "21!";
+        gameMessage.textContent = "21! Click Stand to finish your turn.";
         hitButton.disabled = true; // cannot Hit after 21
+        splitButton.disabled = true; // cannot Split after 21
     } else {
         gameMessage.textContent = "You drew: " + newCard;
     }
