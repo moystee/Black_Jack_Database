@@ -40,7 +40,8 @@ hitButton.addEventListener("click", function () {
             const activeTotal = calculateScore(splitHand1);
         
             if (activeTotal > 21) {
-                gameMessage.textContent = "Hand 1 busts! Click Stand.";
+                gameMessage.textContent = "Hand 1 busts! Click Stand.";   
+                hitButton.disabled = true;
             }
             else if (activeTotal === 21) {
                 gameMessage.textContent = "Hand 1 reached 21! Click Stand.";
@@ -56,9 +57,11 @@ hitButton.addEventListener("click", function () {
         
             if (activeTotal > 21) {
                 gameMessage.textContent = "Hand 2 busts! Click Stand.";
+                hitButton.disabled = true;
             }
             else if (activeTotal === 21) {
                 gameMessage.textContent = "Hand 2 reached 21! Click Stand.";
+                hitButton.disabled = true;
             }
             else {
                 gameMessage.textContent = "You drew: " + newCard;
@@ -99,6 +102,7 @@ standButton.addEventListener("click", function () {
     // Split Button case /////////////////////////////////////////////////////////////////
     if (isSplitMode && activeSplitHand === 1) {
         activeSplitHand = 2;
+        hitButton.disabled = false;
         gameMessage.textContent = "Now playing Hand 2.";
         return;
     }
