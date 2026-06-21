@@ -18,6 +18,14 @@ const cancelExitButton = document.getElementById("cancelExitButton");
 
 const newGameButton = document.getElementById("newGameButton");
 
+const supabaseUrl = "https://hyaapdnhcirowtwvugji.supabase.co";
+const supabaseKey = "sb_publishable_Azo3Dy_jbEb78dGL2p4TJw_sGJC4Dxm";
+
+const database = supabase.createClient(
+    supabaseUrl,
+    supabaseKey
+);
+
 /////////////////////////////////////////////////////////////////
 // Button Functions
 /////////////////////////////////////////////////////////////////
@@ -399,8 +407,32 @@ function updateSplitDisplay() {
         "Player Hand 2 Score: " + calculateScore(splitHand2);
 }
 
+/////////////////////////////////////////////////////////////////
+// Test Saving to the Database
+/////////////////////////////////////////////////////////////////
 
+async function testSaveGame() {
 
+    const { data, error } = await database // Insert a new row into the games table
+        .from("games") // from the games table
+        .insert([  // Add a new record
+            {
+                user_id: "283a9c3a-f385-4a20-9f63-1976b8f31bb0",
+                player_hand: "A♠ | K♦",
+                dealer_hand: "9♣ | 8♥",
+                result: "Player wins",
+                status: "completed"
+            }
+        ]);
+
+    if (error) { // error handling
+        console.log("Error:", error);
+    } else { // saved
+        console.log("Saved:", data);
+    }
+}
+
+testSaveGame();
 
 
 
