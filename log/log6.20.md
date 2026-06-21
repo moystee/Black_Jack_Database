@@ -78,7 +78,15 @@ Edge Cases:
 
 <img width="1110" height="925" alt="image" src="https://github.com/user-attachments/assets/77599d4d-d19b-4ce7-8721-110ae1923e4f" />
 
+Draft 3: Play the Split Hands
 
+Goal: Allow the player to play Hand 1 first, then Hand 2.
+
+Requirements:
+- After Split, Hand 1 becomes active first.
+- Hit affects only the active hand.
+- Stand moves from Hand 1 to Hand 2.
+- After Hand 2 stands, dealer takes their turn.
 
 
 
