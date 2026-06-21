@@ -3,16 +3,31 @@ body {
     background-color: #0b3d2e;
     color: white;
     text-align: center;
+    font-size: 22px;
 }
 
 h1 {
     color: gold;
+    font-size: 56px;
+}
+
+h2 {
+    font-size: 38px;
+}
+
+p {
+    font-size: 26px;
+}
+
+hr {
+    border: 1px solid white;
 }
 
 button {
-    padding: 10px;
-    margin: 10px;
+    padding: 14px 24px;
+    margin: 14px;
     border-radius: 8px;
+    font-size: 20px;
 }
 
 button:not(:disabled) {
@@ -28,6 +43,13 @@ button:not(:disabled):hover {
     cursor: not-allowed;
 }
 
+#gameMessage {
+    color: white;
+    font-size: 28px;
+    font-weight: bold;
+    margin-top: 25px;
+}
+
 /* Exit pop-up screen */
 
 #exitPopup {
@@ -38,7 +60,7 @@ button:not(:disabled):hover {
 
     padding: 25px;
 
-    width: 350px;
+    width: 450px;
 
     margin: 20px auto;
 
@@ -56,7 +78,7 @@ button:not(:disabled):hover {
 
     margin: 10px auto;
 
-    width: 200px;
+    width: 280px;
 }
 
 
