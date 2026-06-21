@@ -86,8 +86,8 @@ standButton.addEventListener("click", function () {
 
 splitButton.addEventListener("click", function () {
 
-    playerHand.textContent = "";
-    playerScore.textContent = "";
+    document.getElementById("playerHandText").hidden = true;
+    playerScore.hidden = true;
 
     document.getElementById("splitArea").hidden = false;
 
