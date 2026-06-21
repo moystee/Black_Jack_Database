@@ -38,7 +38,14 @@ user_stats
 Leaderboard Query Idea:
 - ORDER BY wins DESC, losses ASC, ties DESC
 
-
+First Database Implementation Plan:
+- Create Supabase project.
+- Create users table.
+- Create games table.
+- Create user_stats table.
+- Connect frontend JavaScript to Supabase.
+- Test inserting one completed game result.
+- Later, connect real game results to the database.
 
 
 
