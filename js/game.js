@@ -22,13 +22,14 @@ const cancelExitButton = document.getElementById("cancelExitButton");
 
 hitButton.addEventListener("click", function () {
     // Split Button case /////////////////////////////////////////////////////////////////
-    const newCard = deck.shift();
-
-    if (activeSplitHand === 1) {
-        splitHand1.push(newCard);
-    } else {
-        splitHand2.push(newCard);
-    }
+    if (isSplitMode) {
+        const newCard = deck.shift();
+        
+        if (activeSplitHand === 1) {
+            splitHand1.push(newCard);
+        } else {
+            splitHand2.push(newCard);
+        }
     
         updateSplitDisplay();
     
