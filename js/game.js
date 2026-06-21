@@ -151,7 +151,7 @@ standButton.addEventListener("click", function () {
             hand2Result = "Hand 2 pushes";
         }
     
-        gameMessage.textContent = hand1Result + "! " + hand2Result + "!";
+        gameMessage.textContent = "Player " + hand1Result + "! " + "Player " + hand2Result + "!";
     
         return;
     }
