@@ -88,6 +88,9 @@ Requirements:
 - Stand moves from Hand 1 to Hand 2.
 - After Hand 2 stands, dealer takes their turn.
 
+Edge Case:
+- Addressed the case where both hands are a Bust.
+- Fixed issue with two Bust hands winning even if Dealer hand is a Bust.
 
 
 
