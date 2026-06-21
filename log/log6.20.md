@@ -42,6 +42,8 @@ Result: Push. It's a tie!
 
 <img width="597" height="488" alt="image" src="https://github.com/user-attachments/assets/bbd2f9b9-2cd8-4460-b20c-96767842b9b7" />
 
+## Split Button
+
 Draft 2: Implement Split Functionality
 
 Goal: Allow the player to split their hand into two separate hands when the initial two cards have the same value.
@@ -96,10 +98,30 @@ Edge Case:
 
 <img width="975" height="881" alt="image" src="https://github.com/user-attachments/assets/f17924c6-7e5c-40e9-8a0c-c42c80e4d468" />
 
+## New Game Button
 
+Goal: Allow the player to start a fresh Blackjack game without manually refreshing the browser.
 
+Requirements:
+Add a New Game button.
+- The button is available after a round ends.
+- Clicking New Game creates a fresh 52-card deck.
+- The deck is shuffled.
+- New starting hands are dealt.
+- Dealer hand is reset.
+- Player hand is reset.
+- Scores are reset.
+- Game messages are reset.
+- Split hands are cleared if a split occurred.
 
+Ctrl + R Edge Case:
 
+Current Behavior: If the user refreshes the browser during a game, the page starts a new game and current gameplay is lost.
+
+Future Behavior:
+- Save game state to the database.
+- If the user refreshes, reload the saved game state instead of starting over.
+- If the game was already completed, allow the user to start a new game.
 
 
 
