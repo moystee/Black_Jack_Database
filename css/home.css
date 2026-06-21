@@ -1,31 +1,39 @@
 body {
     font-family: Georgia, serif;
-    text-align: center;
     background-color: #0b3d2e;
     color: white;
-    margin-top: 80px;
+    text-align: center;
+    font-size: 22px;
 }
 
 h1 {
     color: gold;
-    font-size: 40px;
+    font-size: 56px;
+    margin-top: 60px;
 }
 
 button {
-    padding: 12px 20px;
-    margin: 10px;
-    font-size: 16px;
-    cursor: pointer;
+    padding: 14px 24px;
+    margin: 14px;
+    min-width: 160px;
     border-radius: 8px;
-    border: none;
+    font-size: 20px;
 }
 
 button:hover {
     background-color: gold;
+    cursor: pointer;
+}
+
+p {
+    color: gold;
+    font-size: 26px;
+    font-weight: bold;
 }
 
 #message {
     margin-top: 25px;
     font-weight: bold;
     color: gold;
+    font-size: 28px;
 }
