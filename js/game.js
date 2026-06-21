@@ -226,9 +226,19 @@ if (startingPlayerTotal === 21) {
     gameMessage.textContent = "Game started. Good luck! 😁";
 }
 
+/////////////////////////////////////////////////////////////////
+// Toggle Split Button On/Off
+/////////////////////////////////////////////////////////////////
 
+function getCardValue(card) {
+    return card.replace(/[♥️♦️♣️♠️]/g, ""); 
+}
 
-
+if (playerCards.length === 2 && getCardValue(playerCards[0]) === getCardValue(playerCards[1])) {
+    splitButton.disabled = false;
+} else {
+    splitButton.disabled = true;
+}
 
 
 
