@@ -21,6 +21,23 @@ const cancelExitButton = document.getElementById("cancelExitButton");
 /////////////////////////////////////////////////////////////////
 
 hitButton.addEventListener("click", function () {
+    // Split Button case /////////////////////////////////////////////////////////////////
+    const newCard = deck.shift();
+
+    if (activeSplitHand === 1) {
+        splitHand1.push(newCard);
+    } else {
+        splitHand2.push(newCard);
+    }
+    
+        updateSplitDisplay();
+    
+        gameMessage.textContent = "You drew a card for Hand " + activeSplitHand + ": " + newCard ;
+        
+        return;
+    }
+    ///////////////////////////////////////////////////////////////////////////////////////
+    
     const newCard = deck.shift(); // takes first card fom deck
 
     playerCards.push(newCard); // pushes that card to player hand
@@ -46,6 +63,14 @@ hitButton.addEventListener("click", function () {
 });
 
 standButton.addEventListener("click", function () {
+    // Split Button case /////////////////////////////////////////////////////////////////
+    if (isSplitMode && activeSplitHand === 1) {
+        activeSplitHand = 2;
+        gameMessage.textContent = "Now playing Hand 2.";
+        return;
+    }
+    //////////////////////////////////////////////////////////////////////////////////////
+    
     dealerHand.textContent = dealerCards.join(" | "); // gets rid of ?
 
     dealerScore.textContent = "Dealer Score: " + calculateScore(dealerCards); // adds mystery card
@@ -66,9 +91,38 @@ standButton.addEventListener("click", function () {
     const dealerTotal = calculateScore(dealerCards);
 
     const playerBlackjack = playerCards.length === 2 && calculateScore(playerCards) === 21;
-
     const dealerBlackjack = dealerCards.length === 2 && calculateScore(dealerCards) === 21;
 
+    // Split Button case /////////////////////////////////////////////////////////////////
+    if (isSplitMode) {
+        const hand1Total = calculateScore(splitHand1);
+        const hand2Total = calculateScore(splitHand2);
+    
+        let hand1Result = "";
+        let hand2Result = "";
+    
+        if (dealerTotal > 21 || hand1Total > dealerTotal) {
+            hand1Result = "Hand 1 wins";
+        } else if (dealerTotal > hand1Total) {
+            hand1Result = "Hand 1 loses";
+        } else {
+            hand1Result = "Hand 1 pushes";
+        }
+    
+        if (dealerTotal > 21 || hand2Total > dealerTotal) {
+            hand2Result = "Hand 2 wins";
+        } else if (dealerTotal > hand2Total) {
+            hand2Result = "Hand 2 loses";
+        } else {
+            hand2Result = "Hand 2 pushes";
+        }
+    
+        gameMessage.textContent = hand1Result + ". " + hand2Result + ".";
+    
+        return;
+    }
+    /////////////////////////////////////////////////////////////////////////////////////
+    
     if (playerBlackjack && dealerBlackjack) {
         gameMessage.textContent = "Blackjack! Push. It's a tie!";
     } else if (playerBlackjack) {
@@ -84,6 +138,11 @@ standButton.addEventListener("click", function () {
     }
 });
 
+let splitHand1 = [];
+let splitHand2 = [];
+let activeSplitHand = 0;
+let isSplitMode = false;
+
 splitButton.addEventListener("click", function () {
 
     document.getElementById("playerHandText").hidden = true;
@@ -91,8 +150,10 @@ splitButton.addEventListener("click", function () {
 
     document.getElementById("splitArea").hidden = false;
 
-    const splitHand1 = [playerCards[0]];
-    const splitHand2 = [playerCards[1]];
+    splitHand1 = [playerCards[0]];
+    splitHand2 = [playerCards[1]];
+    activeSplitHand = 1;
+    isSplitMode = true;
     
     splitHand1.push(deck.shift());
     splitHand2.push(deck.shift());
@@ -109,11 +170,10 @@ splitButton.addEventListener("click", function () {
     document.getElementById("splitScore2").textContent =
         "Player Hand 2 Score: " + calculateScore(splitHand2);
 
-    hitButton.disabled = true;
-    standButton.disabled = true;
+    hitButton.disabled = false;
+    standButton.disabled = false;
     splitButton.disabled = true;
-
-    gameMessage.textContent = "You now have two hands!";
+    gameMessage.textContent = "You know have two hands! Now playing Hand 1.";
 
 });
 
@@ -269,7 +329,23 @@ if (playerCards.length === 2 && getCardValue(playerCards[0]) === getCardValue(pl
     splitButton.disabled = true;
 }
 
+/////////////////////////////////////////////////////////////////
+// Split Button Score Displays
+/////////////////////////////////////////////////////////////////
 
+function updateSplitDisplay() {
+    document.getElementById("splitHand1").textContent =
+        splitHand1.join(" | ");
+
+    document.getElementById("splitHand2").textContent =
+        splitHand2.join(" | ");
+
+    document.getElementById("splitScore1").textContent =
+        "Player Hand 1 Score: " + calculateScore(splitHand1);
+
+    document.getElementById("splitScore2").textContent =
+        "Player Hand 2 Score: " + calculateScore(splitHand2);
+}
 
 
 
