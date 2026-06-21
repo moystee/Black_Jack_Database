@@ -85,7 +85,11 @@ standButton.addEventListener("click", function () {
 });
 
 splitButton.addEventListener("click", function () {
-    gameMessage.textContent = "Split button clicked.";
+
+    document.getElementById("splitArea").hidden = false;
+
+    gameMessage.textContent = "You now have two hands!";
+
 });
 
 exitButton.addEventListener("click", function () {
