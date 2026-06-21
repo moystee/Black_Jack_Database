@@ -33,7 +33,36 @@ hitButton.addEventListener("click", function () {
     
         updateSplitDisplay();
     
-        gameMessage.textContent = "You drew a card for Hand " + activeSplitHand + ": " + newCard ;
+        if (activeSplitHand === 1) {
+
+            const activeTotal = calculateScore(splitHand1);
+        
+            if (activeTotal > 21) {
+                gameMessage.textContent = "Hand 1 busts! Click Stand.";
+            }
+            else if (activeTotal === 21) {
+                gameMessage.textContent = "Hand 1 reached 21!";
+            }
+            else {
+                gameMessage.textContent = "You drew: " + newCard;
+            }
+        
+        }
+        else {
+        
+            const activeTotal = calculateScore(splitHand2);
+        
+            if (activeTotal > 21) {
+                gameMessage.textContent = "Hand 2 busts! Click Stand.";
+            }
+            else if (activeTotal === 21) {
+                gameMessage.textContent = "Hand 2 reached 21!";
+            }
+            else {
+                gameMessage.textContent = "You drew: " + newCard;
+            }
+        
+        }
         
         return;
     }
@@ -102,7 +131,9 @@ standButton.addEventListener("click", function () {
         let hand1Result = "";
         let hand2Result = "";
     
-        if (dealerTotal > 21 || hand1Total > dealerTotal) {
+        if (hand1Total > 21) {
+            hand1Result = "Hand 1 loses";
+        } else if (dealerTotal > 21 || hand1Total > dealerTotal) {
             hand1Result = "Hand 1 wins";
         } else if (dealerTotal > hand1Total) {
             hand1Result = "Hand 1 loses";
@@ -110,7 +141,9 @@ standButton.addEventListener("click", function () {
             hand1Result = "Hand 1 pushes";
         }
     
-        if (dealerTotal > 21 || hand2Total > dealerTotal) {
+        if (hand2Total > 21) {
+            hand2Result = "Hand 2 loses";
+        } else if (dealerTotal > 21 || hand2Total > dealerTotal) {
             hand2Result = "Hand 2 wins";
         } else if (dealerTotal > hand2Total) {
             hand2Result = "Hand 2 loses";
