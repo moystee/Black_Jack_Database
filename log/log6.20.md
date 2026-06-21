@@ -123,9 +123,11 @@ Future Behavior:
 - If the user refreshes, reload the saved game state instead of starting over.
 - If the game was already completed, allow the user to start a new game.
 
+<img width="1025" height="913" alt="image" src="https://github.com/user-attachments/assets/662bdd50-88a8-44a6-b707-a23d695ca3dd" />
 
+**Note:** Enlarged the Home Screen to match the design of the Game Screen.
 
-
+<img width="1025" height="371" alt="image" src="https://github.com/user-attachments/assets/16ce9ebd-a620-4a3f-a7d4-d65806489089" />
 
 
 
