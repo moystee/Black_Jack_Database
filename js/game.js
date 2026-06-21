@@ -86,7 +86,32 @@ standButton.addEventListener("click", function () {
 
 splitButton.addEventListener("click", function () {
 
+    playerHand.textContent = "";
+    playerScore.textContent = "";
+
     document.getElementById("splitArea").hidden = false;
+
+    const splitHand1 = [playerCards[0]];
+    const splitHand2 = [playerCards[1]];
+    
+    splitHand1.push(deck.shift());
+    splitHand2.push(deck.shift());
+    
+    document.getElementById("splitHand1").textContent =
+        splitHand1.join(" | ");
+    
+    document.getElementById("splitHand2").textContent =
+        splitHand2.join(" | ");
+    
+    document.getElementById("splitScore1").textContent =
+        "Player Hand 1 Score: " + calculateScore(splitHand1);
+    
+    document.getElementById("splitScore2").textContent =
+        "Player Hand 2 Score: " + calculateScore(splitHand2);
+
+    hitButton.disabled = true;
+    standButton.disabled = true;
+    splitButton.disabled = true;
 
     gameMessage.textContent = "You now have two hands!";
 
