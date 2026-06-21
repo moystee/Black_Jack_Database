@@ -76,6 +76,7 @@ Edge Cases:
 
 **Note:** Since Split functionality is being implemented, the game design will be enlarged and organized a bit differently.
 
+<img width="1110" height="925" alt="image" src="https://github.com/user-attachments/assets/77599d4d-d19b-4ce7-8721-110ae1923e4f" />
 
 
 
