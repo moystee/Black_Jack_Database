@@ -59,4 +59,4 @@ This table stores each Blackjack game that was played.
 13. Add and test Stand Button functionality.
 14. Add initial Blackjack Scenarios.
 15. Add and test Split Button functionality.
-
+16. Add and test New Game Button functionality.
