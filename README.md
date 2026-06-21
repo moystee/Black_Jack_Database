@@ -57,5 +57,6 @@ This table stores each Blackjack game that was played.
 11. Calculate and display starting hand scores.
 12. Add and test Hit Button functionality.
 13. Add and test Stand Button functionality.
-
+14. Add initial Blackjack Scenarios.
+15. Add and test Split Button functionality.
 
