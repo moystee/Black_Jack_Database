@@ -16,6 +16,8 @@ const saveExitButton = document.getElementById("saveExitButton");
 const nosaveExitButton = document.getElementById("nosaveExitButton");
 const cancelExitButton = document.getElementById("cancelExitButton");
 
+const newGameButton = document.getElementById("newGameButton");
+
 /////////////////////////////////////////////////////////////////
 // Button Functions
 /////////////////////////////////////////////////////////////////
@@ -83,6 +85,7 @@ hitButton.addEventListener("click", function () {
         hitButton.disabled = true;
         standButton.disabled = true;
         splitButton.disabled = true;
+        newGameButton.hidden = false;
     } else if (playerTotal === 21) {
         gameMessage.textContent = "21! Click Stand to finish your turn.";
         hitButton.disabled = true; // cannot Hit after 21
@@ -152,23 +155,30 @@ standButton.addEventListener("click", function () {
         }
     
         gameMessage.textContent = "Player " + hand1Result + "! " + "Player " + hand2Result + "!";
-    
+        newGameButton.hidden = false;
+        
         return;
     }
     /////////////////////////////////////////////////////////////////////////////////////
     
     if (playerBlackjack && dealerBlackjack) {
         gameMessage.textContent = "Blackjack! Push. It's a tie!";
+        newGameButton.hidden = false;
     } else if (playerBlackjack) {
         gameMessage.textContent = "Blackjack! Player wins!";
+        newGameButton.hidden = false;
     } else if (dealerTotal > 21) {
         gameMessage.textContent = "Bust! Player wins!";
+        newGameButton.hidden = false;
     } else if (playerTotal > dealerTotal) {
         gameMessage.textContent = "Player wins!";
+        newGameButton.hidden = false;
     } else if (dealerTotal > playerTotal) {
         gameMessage.textContent = "Dealer wins!";
+        newGameButton.hidden = false;
     } else {
         gameMessage.textContent = "Push. It's a tie!";
+        newGameButton.hidden = false;
     }
 });
 
@@ -225,6 +235,10 @@ nosaveExitButton.addEventListener("click", function () {
 
 cancelExitButton.addEventListener("click", function () {
     exitPopup.hidden = true;
+});
+
+newGameButton.addEventListener("click", function () {
+    location.reload();
 });
 
 /////////////////////////////////////////////////////////////////
