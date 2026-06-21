@@ -42,6 +42,47 @@ Result: Push. It's a tie!
 
 <img width="597" height="488" alt="image" src="https://github.com/user-attachments/assets/bbd2f9b9-2cd8-4460-b20c-96767842b9b7" />
 
+Draft 2: Implement Split Functionality
+
+Goal: Allow the player to split their hand into two separate hands when the initial two cards have the same value.
+
+Requirements:
+- Split button is disabled by default.
+- Split button becomes enabled only if:
+  - The player has exactly two cards.
+  - Both cards have the same value.
+- Clicking Split creates two separate player hands.
+- Each split hand receives one additional card from the deck.
+- Scores are calculated separately for each hand.
+- The player plays the first hand, then the second hand.
+
+Expected Example:
+
+**Before Split:**
+
+Player Hand: 8 | 8
+
+**After Split:**
+
+Hand 1: 8 | K
+
+Hand 2: 8 | 5
+
+Edge Cases:
+- Aces may be split.
+- Split is unavailable after the player Hits.
+- Split is unavailable after the player Stands.
+- Split is unavailable if the first two cards have different values.
+
+**Note:** Since Split functionality is being implemented, the game design will be enlarged and organized a bit differently.
+
+
+
+
+
+
+
+
 
 
 
