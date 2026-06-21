@@ -41,10 +41,10 @@ hitButton.addEventListener("click", function () {
                 gameMessage.textContent = "Hand 1 busts! Click Stand.";
             }
             else if (activeTotal === 21) {
-                gameMessage.textContent = "Hand 1 reached 21!";
+                gameMessage.textContent = "Hand 1 reached 21! Click Stand.";
             }
             else {
-                gameMessage.textContent = "You drew: " + newCard;
+                gameMessage.textContent = "You drew: " + newCard + " . Click Stand to move to Player Hand 2.";
             }
         
         }
@@ -56,7 +56,7 @@ hitButton.addEventListener("click", function () {
                 gameMessage.textContent = "Hand 2 busts! Click Stand.";
             }
             else if (activeTotal === 21) {
-                gameMessage.textContent = "Hand 2 reached 21!";
+                gameMessage.textContent = "Hand 2 reached 21! Click Stand.";
             }
             else {
                 gameMessage.textContent = "You drew: " + newCard;
@@ -151,7 +151,7 @@ standButton.addEventListener("click", function () {
             hand2Result = "Hand 2 pushes";
         }
     
-        gameMessage.textContent = hand1Result + ". " + hand2Result + ".";
+        gameMessage.textContent = hand1Result + "! " + hand2Result + "!";
     
         return;
     }
