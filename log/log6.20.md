@@ -76,7 +76,7 @@ Edge Cases:
 
 **Note:** Since Split functionality is being implemented, the game design will be enlarged and organized a bit differently.
 
-<img width="1110" height="925" alt="image" src="https://github.com/user-attachments/assets/77599d4d-d19b-4ce7-8721-110ae1923e4f" />
+<img width="975" height="925" alt="image" src="https://github.com/user-attachments/assets/77599d4d-d19b-4ce7-8721-110ae1923e4f" />
 
 Draft 3: Play the Split Hands
 
@@ -91,6 +91,10 @@ Requirements:
 Edge Case:
 - Addressed the case where both hands are a Bust.
 - Fixed issue with two Bust hands winning even if Dealer hand is a Bust.
+
+<img width="975" height="894" alt="image" src="https://github.com/user-attachments/assets/24567b1c-1b4b-4971-9db6-a68cd746e3c9" />
+
+<img width="975" height="881" alt="image" src="https://github.com/user-attachments/assets/f17924c6-7e5c-40e9-8a0c-c42c80e4d468" />
 
 
 
