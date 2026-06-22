@@ -278,7 +278,42 @@ saveExitButton.addEventListener("click", function () {
     window.location.href = "home.html";
 });
 
-nosaveExitButton.addEventListener("click", function () {
+nosaveExitButton.addEventListener("click", async function () {
+    const lastGameId = localStorage.getItem("last_game_id");
+
+    if (lastGameId) {
+        await database
+            .from("games")
+            .delete()
+            .eq("id", lastGameId);
+
+        const winAdd = Number(localStorage.getItem("last_win_add"));
+        const lossAdd = Number(localStorage.getItem("last_loss_add"));
+        const tieAdd = Number(localStorage.getItem("last_tie_add"));
+
+        const { data } = await database
+            .from("user_stats")
+            .select("*")
+            .eq("user_id", localStorage.getItem("user_id"))
+            .single();
+
+        await database
+            .from("user_stats")
+            .update({
+                wins: data.wins - winAdd,
+                losses: data.losses - lossAdd,
+                ties: data.ties - tieAdd,
+                games_played: data.games_played - 1,
+                updated_at: new Date().toISOString()
+            })
+            .eq("user_id", localStorage.getItem("user_id"));
+
+        localStorage.removeItem("last_game_id");
+        localStorage.removeItem("last_win_add");
+        localStorage.removeItem("last_loss_add");
+        localStorage.removeItem("last_tie_add");
+    }
+
     window.location.href = "home.html";
 });
 
@@ -489,19 +524,22 @@ async function saveCompletedGame(resultMessage) {
     const { data, error } = await database
         .from("games")
         .insert([
-            {
-                user_id: localStorage.getItem("user_id"),
-                player_hand: savedPlayerHand,
-                dealer_hand: dealerCards.join(" | "),
-                result: resultMessage,
-                status: "completed"
-            }
-        ]);
+        {
+            user_id: localStorage.getItem("user_id"),
+            player_hand: savedPlayerHand,
+            dealer_hand: dealerCards.join(" | "),
+            result: resultMessage,
+            status: "completed"
+        }
+    ])
+    .select()
+    .single();
 
     if (error) {
         console.log("Error saving completed game:", error);
     } else {
         console.log("Completed game saved:", data);
+        localStorage.setItem("last_game_id", data.id);
     }
 }
 
@@ -510,6 +548,10 @@ async function saveCompletedGame(resultMessage) {
 /////////////////////////////////////////////////////////////////
 
 async function updateUserStatsDirect(winAdd, lossAdd, tieAdd) {
+    localStorage.setItem("last_win_add", winAdd);
+    localStorage.setItem("last_loss_add", lossAdd);
+    localStorage.setItem("last_tie_add", tieAdd);
+    
     const { data, error } = await database
         .from("user_stats")
         .select("*")
