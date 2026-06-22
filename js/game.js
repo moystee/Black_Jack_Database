@@ -473,12 +473,22 @@ async function testSaveGame() {
 /////////////////////////////////////////////////////////////////
 
 async function saveCompletedGame(resultMessage) {
+    let savedPlayerHand = "";
+
+    if (isSplitMode) {
+        savedPlayerHand =
+            "Hand 1: " + splitHand1.join(" | ") +
+            " / Hand 2: " + splitHand2.join(" | ");
+    } else {
+        savedPlayerHand = playerCards.join(" | ");
+    }
+
     const { data, error } = await database
         .from("games")
         .insert([
             {
                 user_id: "283a9c3a-f385-4a20-9f63-1976b8f31bb0",
-                player_hand: playerCards.join(" | "),
+                player_hand: savedPlayerHand,
                 dealer_hand: dealerCards.join(" | "),
                 result: resultMessage,
                 status: "completed"
