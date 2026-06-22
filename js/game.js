@@ -92,7 +92,8 @@ hitButton.addEventListener("click", function () {
     const playerTotal = calculateScore(playerCards); // save value
 
     if (playerTotal > 21) { // display is based on new score 
-        gameMessage.textContent = "Bust!";
+        gameMessage.textContent = "Bust! Player loses!";
+        saveCompletedGame("Bust! Player loses!");
         hitButton.disabled = true;
         standButton.disabled = true;
         splitButton.disabled = true;
@@ -167,6 +168,7 @@ standButton.addEventListener("click", function () {
         }
     
         gameMessage.textContent = "Player " + hand1Result + "! " + "Player " + hand2Result + "!";
+        saveCompletedGame("Player " + hand1Result + "! " + "Player " + hand2Result + "!");
         newGameButton.hidden = false;
         
         return;
@@ -175,21 +177,27 @@ standButton.addEventListener("click", function () {
     
     if (playerBlackjack && dealerBlackjack) {
         gameMessage.textContent = "Blackjack! Push. It's a tie!";
+        saveCompletedGame("Blackjack! Push. It's a tie!");
         newGameButton.hidden = false;
     } else if (playerBlackjack) {
         gameMessage.textContent = "Blackjack! Player wins!";
+        saveCompletedGame("Blackjack! Player wins!");
         newGameButton.hidden = false;
     } else if (dealerTotal > 21) {
         gameMessage.textContent = "Bust! Player wins!";
+        saveCompletedGame("Bust! Player wins!");
         newGameButton.hidden = false;
     } else if (playerTotal > dealerTotal) {
         gameMessage.textContent = "Player wins!";
+        saveCompletedGame("Player wins!");
         newGameButton.hidden = false;
     } else if (dealerTotal > playerTotal) {
         gameMessage.textContent = "Dealer wins!";
+        saveCompletedGame("Dealer wins!");
         newGameButton.hidden = false;
     } else {
         gameMessage.textContent = "Push. It's a tie!";
+        saveCompletedGame("Push. It's a tie!");
         newGameButton.hidden = false;
     }
 });
@@ -408,7 +416,7 @@ function updateSplitDisplay() {
 }
 
 /////////////////////////////////////////////////////////////////
-// Test Saving to the Database
+// Test Saving to the Database w/ Hardcoded Data
 /////////////////////////////////////////////////////////////////
 
 async function testSaveGame() {
@@ -432,9 +440,31 @@ async function testSaveGame() {
     }
 }
 
-testSaveGame();
+// testSaveGame();
 
+/////////////////////////////////////////////////////////////////
+// Test Saving to the Database w/ Real Data
+/////////////////////////////////////////////////////////////////
 
+async function saveCompletedGame(resultMessage) {
+    const { data, error } = await database
+        .from("games")
+        .insert([
+            {
+                user_id: "283a9c3a-f385-4a20-9f63-1976b8f31bb0",
+                player_hand: playerCards.join(" | "),
+                dealer_hand: dealerCards.join(" | "),
+                result: resultMessage,
+                status: "completed"
+            }
+        ]);
+
+    if (error) {
+        console.log("Error saving completed game:", error);
+    } else {
+        console.log("Completed game saved:", data);
+    }
+}
 
 
 
