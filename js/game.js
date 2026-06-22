@@ -267,11 +267,11 @@ exitButton.addEventListener("click", function () {
 });
 
 saveExitButton.addEventListener("click", function () {
-    window.close();
+    window.location.href = "home.html";
 });
 
 nosaveExitButton.addEventListener("click", function () {
-    window.close();
+    window.location.href = "home.html";
 });
 
 cancelExitButton.addEventListener("click", function () {
@@ -505,7 +505,7 @@ async function updateUserStatsDirect(winAdd, lossAdd, tieAdd) {
     const { data, error } = await database
         .from("user_stats")
         .select("*")
-        .eq("user_id", "283a9c3a-f385-4a20-9f63-1976b8f31bb0")
+        .eq("user_id", localStorage.getItem("user_id"))
         .single();
 
     if (error) {
@@ -522,7 +522,7 @@ async function updateUserStatsDirect(winAdd, lossAdd, tieAdd) {
             games_played: data.games_played + 1,
             updated_at: new Date().toISOString()
         })
-        .eq("user_id", "283a9c3a-f385-4a20-9f63-1976b8f31bb0");
+        .eq("user_id", localStorage.getItem("user_id"));
 
     if (updateError) {
         console.log("Error updating stats:", updateError);
