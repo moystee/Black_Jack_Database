@@ -94,6 +94,7 @@ hitButton.addEventListener("click", function () {
     if (playerTotal > 21) { // display is based on new score 
         gameMessage.textContent = "Bust! Player loses!";
         saveCompletedGame("Bust! Player loses!");
+        updateUserStatsDirect(0, 1, 0); // loss
         hitButton.disabled = true;
         standButton.disabled = true;
         splitButton.disabled = true;
@@ -200,26 +201,32 @@ standButton.addEventListener("click", function () {
     if (playerBlackjack && dealerBlackjack) {
         gameMessage.textContent = "Blackjack! Push. It's a tie!";
         saveCompletedGame("Blackjack! Push. It's a tie!");
+        updateUserStatsDirect(0, 0, 1); // tie
         newGameButton.hidden = false;
     } else if (playerBlackjack) {
         gameMessage.textContent = "Blackjack! Player wins!";
         saveCompletedGame("Blackjack! Player wins!");
+        updateUserStatsDirect(1, 0, 0); // win
         newGameButton.hidden = false;
     } else if (dealerTotal > 21) {
         gameMessage.textContent = "Bust! Player wins!";
         saveCompletedGame("Bust! Player wins!");
+        updateUserStatsDirect(1, 0, 0); // win
         newGameButton.hidden = false;
     } else if (playerTotal > dealerTotal) {
         gameMessage.textContent = "Player wins!";
         saveCompletedGame("Player wins!");
+        updateUserStatsDirect(1, 0, 0); // win
         newGameButton.hidden = false;
     } else if (dealerTotal > playerTotal) {
         gameMessage.textContent = "Dealer wins!";
         saveCompletedGame("Dealer wins!");
+        updateUserStatsDirect(0, 1, 0); // loss
         newGameButton.hidden = false;
     } else {
         gameMessage.textContent = "Push. It's a tie!";
         saveCompletedGame("Push. It's a tie!");
+        updateUserStatsDirect(0, 0, 1); // tie
         newGameButton.hidden = false;
     }
 });
