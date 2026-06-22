@@ -166,9 +166,30 @@ standButton.addEventListener("click", function () {
         } else {
             hand2Result = "Hand 2 pushes";
         }
-    
+   
+        let splitWinAdd = 0;
+        let splitLossAdd = 0;
+        let splitTieAdd = 0;
+        
+        if (hand1Result.includes("wins")) {
+            splitWinAdd++;
+        } else if (hand1Result.includes("loses")) {
+            splitLossAdd++;
+        } else {
+            splitTieAdd++;
+        }
+        
+        if (hand2Result.includes("wins")) {
+            splitWinAdd++;
+        } else if (hand2Result.includes("loses")) {
+            splitLossAdd++;
+        } else {
+            splitTieAdd++;
+        }
+        
         gameMessage.textContent = "Player " + hand1Result + "! " + "Player " + hand2Result + "!";
         saveCompletedGame("Player " + hand1Result + "! " + "Player " + hand2Result + "!");
+        updateUserStatsDirect(splitWinAdd, splitLossAdd, splitTieAdd);
         newGameButton.hidden = false;
         
         return;
@@ -463,48 +484,14 @@ async function saveCompletedGame(resultMessage) {
         console.log("Error saving completed game:", error);
     } else {
         console.log("Completed game saved:", data);
-        updateUserStats(resultMessage); // to update users stats using function below
     }
 }
 
-async function updateUserStats(resultMessage) {
-    let winAdd = 0;
-    let lossAdd = 0;
-    let tieAdd = 0;
-    
-    if (resultMessage.includes("Hand 1") && resultMessage.includes("Hand 2")) {
-        if (resultMessage.includes("Player Hand 1 wins")) {
-            winAdd++;
-        }
-        else if (resultMessage.includes("Player Hand 1 loses")) {
-            lossAdd++;
-        }
-        else if (resultMessage.includes("Player Hand 1 pushes")) {
-            tieAdd++;
-        }
-        
-        if (resultMessage.includes("Player Hand 2 wins")) {
-            winAdd++;
-        }
-        else if (resultMessage.includes("Player Hand 2 loses")) {
-            lossAdd++;
-        }
-        else if (resultMessage.includes("Player Hand 2 pushes")) {
-            tieAdd++;
-        }
-    }
-    else {
-        if (resultMessage.includes("Player wins")) {
-            winAdd = 1;
-        }
-        else if (resultMessage.includes("Dealer wins") || resultMessage.includes("Player loses") || resultMessage.includes("Bust")) {
-            lossAdd = 1;
-        }
-        else if (resultMessage.includes("Push")) {
-            tieAdd = 1;
-        }
-    }
+/////////////////////////////////////////////////////////////////
+// Test Saving to the users stats table w/ Real Data
+/////////////////////////////////////////////////////////////////
 
+async function updateUserStatsDirect(winAdd, lossAdd, tieAdd) {
     const { data, error } = await database
         .from("user_stats")
         .select("*")
