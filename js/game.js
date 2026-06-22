@@ -335,6 +335,11 @@ cancelExitButton.addEventListener("click", function () {
 });
 
 newGameButton.addEventListener("click", function () {
+    localStorage.removeItem("last_game_id");
+    localStorage.removeItem("last_win_add");
+    localStorage.removeItem("last_loss_add");
+    localStorage.removeItem("last_tie_add");
+
     location.reload();
 });
 
