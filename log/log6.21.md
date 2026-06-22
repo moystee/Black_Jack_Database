@@ -51,7 +51,7 @@ Test Results:
 
 <img width="1868" height="370" alt="image" src="https://github.com/user-attachments/assets/b3ee42f9-147a-420a-8117-10136ccb605b" />
 
-Draft 2: Save the actual completed Blackjack game result into the games table.
+Draft 2: Save the actual completed Blackjack game result into the games table and users_stats table.
 
 Expected Example:
 
@@ -69,11 +69,14 @@ Database Row:
 
 Testing Plan:
 - Finish one normal game.
-- Check Supabase games table.
+- Check Supabase games and users_stats table.
 - Confirm a new row appears with the real cards and result.
 
+<img width="1859" height="458" alt="image" src="https://github.com/user-attachments/assets/a5e33e3b-8183-4149-a14d-6f49721e001b" />
 
+<img width="1566" height="86" alt="image" src="https://github.com/user-attachments/assets/0adb6e46-89ac-41c2-bdb7-bfbad42caa96" />
 
+**Note:** The user_stats' table was not saving values correctly from Splits but this has been fixed.
 
 
 
