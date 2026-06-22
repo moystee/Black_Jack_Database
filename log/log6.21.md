@@ -99,6 +99,9 @@ Leaderboard Query Idea:
 - Order by wins DESC, ties DESC, losses ASC.
 - Limit results to 10.
 
+**Note:** Moved the username input to be in between the two buttons.
+
+<img width="1106" height="532" alt="image" src="https://github.com/user-attachments/assets/c6c72853-c809-436b-8f15-7776c69cabae" />
 
 
 
