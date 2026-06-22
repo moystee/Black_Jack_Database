@@ -62,13 +62,21 @@ Testing Plan:
 
 Draft 3: Allow multiple users to create accounts and have their own Blackjack statistics.
 
-Requirements:
-- Create new users.
-- Login existing users.
-- Store username.
-- Associate games with the logged-in user.
-- Associate user_stats with the logged-in user.
-- Remove dependency on the hardcoded test user_id.
+Home Page Changes:
+- Add username input field.
+- Keep Start New Game button.
+- Keep Join Existing Game button.
+
+Start New Game:
+- Creates a new user.
+- Creates a matching user_stats record.
+- Prevent duplicate usernames.
+- Saves current user_id locally.
+
+Join Existing Game:
+- Finds an existing username.
+- Loads the corresponding user_id.
+- Saves current user_id locally.
 
 ## Leaderboard
 
