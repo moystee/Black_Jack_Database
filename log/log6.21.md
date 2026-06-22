@@ -52,7 +52,7 @@ Testing Plan:
 - Check Supabase games and users_stats table.
 - Confirm a new row appears with the real cards and result.
 
-<img width="1859" height="458" alt="image" src="https://github.com/user-attachments/assets/a5e33e3b-8183-4149-a14d-6f49721e001b" />
+<img width="1857" height="912" alt="image" src="https://github.com/user-attachments/assets/82101a4b-2a26-4da4-9d50-1c4ea79d8ba9" />
 
 <img width="1566" height="86" alt="image" src="https://github.com/user-attachments/assets/0adb6e46-89ac-41c2-bdb7-bfbad42caa96" />
 
@@ -78,15 +78,27 @@ Join Existing Game:
 - Loads the corresponding user_id.
 - Saves current user_id locally.
 
+<img width="1556" height="222" alt="image" src="https://github.com/user-attachments/assets/7747f3eb-f7b6-4906-bbdc-bb3729ef35e9" />
+
+<img width="864" height="250" alt="image" src="https://github.com/user-attachments/assets/5516a352-4bb6-438f-8f81-db7f234d6ab3" />
+
 ## Leaderboard
 
-Leaderboard:
-- Show the top 10 players on the home page.
-- Rank players by number of wins.
-- If wins are tied, possibly rank by win percentage.
+Draft 4: Add a leaderboard to the home page that displays the top Blackjack players.
+
+Requirements:
+- Show the top 10 users.
+- Display each user's username.
+- Display wins, losses, ties, and games played.
+- Rank players by most wins.
+- If wins are tied, rank by most ties.
+- If wins and ties are tied, rank by fewest losses.
 
 Leaderboard Query Idea:
-- ORDER BY wins DESC, losses ASC, ties DESC
+- Join users and user_stats using user_id.
+- Order by wins DESC, ties DESC, losses ASC.
+- Limit results to 10.
+
 
 
 
