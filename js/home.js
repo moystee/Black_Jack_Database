@@ -18,7 +18,7 @@ const database = supabase.createClient(
 // Button Functions
 /////////////////////////////////////////////////////////////////
 
-startButton.addEventListener("click", async function () {
+startGameButton.addEventListener("click", async function () {
     const username = usernameInput.value.trim();
 
     if (username === "") {
@@ -72,7 +72,7 @@ startButton.addEventListener("click", async function () {
     window.location.href = "game.html";
 });
 
-joinButton.addEventListener("click", async function () {
+joinGameButton.addEventListener("click", async function () {
     const username = usernameInput.value.trim();
 
     if (username === "") {
