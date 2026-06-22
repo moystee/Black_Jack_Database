@@ -10,34 +10,6 @@ Database Usage:
 - Save unfinished games if the user refreshes or exits.
 - Allow users to continue an existing game later.
 
-**Additional Database Features:**
-
-Player Stats:
-- Track total wins.
-- Track total losses.
-- Track total ties/pushes.
-- Track total games played.
-
-Leaderboard:
-- Show the top 10 players on the home page.
-- Rank players by number of wins.
-- If wins are tied, possibly rank by win percentage.
-
-Possible Table Addition:
-
-user_stats
-- id
-- user_id
-- wins
-- losses
-- ties
-- games_played
-- created_at
-- updated_at
-
-Leaderboard Query Idea:
-- ORDER BY wins DESC, losses ASC, ties DESC
-
 First Database Implementation Plan:
 - Create Supabase project.
 - Create users table.
@@ -51,7 +23,15 @@ Test Results:
 
 <img width="1868" height="370" alt="image" src="https://github.com/user-attachments/assets/b3ee42f9-147a-420a-8117-10136ccb605b" />
 
+## Game and User_stats Table
+
 Draft 2: Save the actual completed Blackjack game result into the games table and users_stats table.
+
+Player Stats:
+- Track total wins.
+- Track total losses.
+- Track total ties/pushes.
+- Track total games played.
 
 Expected Example:
 
@@ -78,7 +58,37 @@ Testing Plan:
 
 **Note:** The user_stats' table was not saving values correctly from Splits but this has been fixed.
 
+## Users Table
 
+Draft 3: Allow multiple users to create accounts and have their own Blackjack statistics.
+
+Requirements:
+- Create new users.
+- Login existing users.
+- Store username.
+- Associate games with the logged-in user.
+- Associate user_stats with the logged-in user.
+- Remove dependency on the hardcoded test user_id.
+
+Leaderboard:
+- Show the top 10 players on the home page.
+- Rank players by number of wins.
+- If wins are tied, possibly rank by win percentage.
+
+Possible Table Addition:
+
+user_stats
+- id
+- user_id
+- wins
+- losses
+- ties
+- games_played
+- created_at
+- updated_at
+
+Leaderboard Query Idea:
+- ORDER BY wins DESC, losses ASC, ties DESC
 
 
 
