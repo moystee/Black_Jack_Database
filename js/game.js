@@ -558,6 +558,7 @@ async function saveCompletedGame(resultMessage) {
     } else {
         console.log("Completed game saved:", data);
         localStorage.setItem("last_game_id", data.id);
+        console.log("Saved last_game_id:", data.id);
     }
 }
 
