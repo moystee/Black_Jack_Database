@@ -416,7 +416,7 @@ function updateSplitDisplay() {
 }
 
 /////////////////////////////////////////////////////////////////
-// Test Saving to the Database w/ Hardcoded Data
+// Test Saving to the game table w/ Hardcoded Data
 /////////////////////////////////////////////////////////////////
 
 async function testSaveGame() {
@@ -443,7 +443,7 @@ async function testSaveGame() {
 // testSaveGame();
 
 /////////////////////////////////////////////////////////////////
-// Test Saving to the Database w/ Real Data
+// Test Saving to the game table w/ Real Data
 /////////////////////////////////////////////////////////////////
 
 async function saveCompletedGame(resultMessage) {
@@ -463,10 +463,53 @@ async function saveCompletedGame(resultMessage) {
         console.log("Error saving completed game:", error);
     } else {
         console.log("Completed game saved:", data);
+        updateUserStats(resultMessage); // to update users stats using function below
     }
 }
 
+async function updateUserStats(resultMessage) {
+    let winAdd = 0;
+    let lossAdd = 0;
+    let tieAdd = 0;
 
+    if (resultMessage.includes("Player wins")) {
+        winAdd = 1;
+    }
+    else if (resultMessage.includes("Dealer wins") || resultMessage.includes("Player loses") || resultMessage.includes("Bust")) {
+        lossAdd = 1;
+    }
+    else if (resultMessage.includes("Push")) {
+        tieAdd = 1;
+    }
+
+    const { data, error } = await database
+        .from("user_stats")
+        .select("*")
+        .eq("user_id", "283a9c3a-f385-4a20-9f63-1976b8f31bb0")
+        .single();
+
+    if (error) {
+        console.log("Error getting stats:", error);
+        return;
+    }
+
+    const { error: updateError } = await database
+        .from("user_stats")
+        .update({
+            wins: data.wins + winAdd,
+            losses: data.losses + lossAdd,
+            ties: data.ties + tieAdd,
+            games_played: data.games_played + 1,
+            updated_at: new Date().toISOString()
+        })
+        .eq("user_id", "283a9c3a-f385-4a20-9f63-1976b8f31bb0");
+
+    if (updateError) {
+        console.log("Error updating stats:", updateError);
+    } else {
+        console.log("Stats updated.");
+    }
+}
 
 
 
