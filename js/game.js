@@ -473,23 +473,23 @@ async function updateUserStats(resultMessage) {
     let tieAdd = 0;
     
     if (resultMessage.includes("Hand 1") && resultMessage.includes("Hand 2")) {
-        if (resultMessage.includes("Hand 1 wins")) {
+        if (resultMessage.includes("Player Hand 1 wins")) {
             winAdd++;
         }
-        else if (resultMessage.includes("Hand 1 loses")) {
+        else if (resultMessage.includes("Player Hand 1 loses")) {
             lossAdd++;
         }
-        else if (resultMessage.includes("Hand 1 pushes")) {
+        else if (resultMessage.includes("Player Hand 1 pushes")) {
             tieAdd++;
         }
-    
-        if (resultMessage.includes("Hand 2 wins")) {
+        
+        if (resultMessage.includes("Player Hand 2 wins")) {
             winAdd++;
         }
-        else if (resultMessage.includes("Hand 2 loses")) {
+        else if (resultMessage.includes("Player Hand 2 loses")) {
             lossAdd++;
         }
-        else if (resultMessage.includes("Hand 2 pushes")) {
+        else if (resultMessage.includes("Player Hand 2 pushes")) {
             tieAdd++;
         }
     }
