@@ -70,22 +70,12 @@ Requirements:
 - Associate user_stats with the logged-in user.
 - Remove dependency on the hardcoded test user_id.
 
+## Leaderboard
+
 Leaderboard:
 - Show the top 10 players on the home page.
 - Rank players by number of wins.
 - If wins are tied, possibly rank by win percentage.
-
-Possible Table Addition:
-
-user_stats
-- id
-- user_id
-- wins
-- losses
-- ties
-- games_played
-- created_at
-- updated_at
 
 Leaderboard Query Idea:
 - ORDER BY wins DESC, losses ASC, ties DESC
