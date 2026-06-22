@@ -106,6 +106,8 @@ joinGameButton.addEventListener("click", async function () {
 });
 
 async function loadLeaderboard() {
+    leaderboard.innerHTML = "";
+    
     const { data: stats, error: statsError } = await database
         .from("user_stats")
         .select("*")
@@ -146,7 +148,5 @@ async function loadLeaderboard() {
             "<br>";
     }
 }
-
-loadLeaderboard();
 
 loadLeaderboard();
