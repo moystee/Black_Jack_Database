@@ -103,6 +103,12 @@ Leaderboard Query Idea:
 
 <img width="1106" height="532" alt="image" src="https://github.com/user-attachments/assets/c6c72853-c809-436b-8f15-7776c69cabae" />
 
+## Exit Without Saving Button
+
+Draft 5: Fixed the functionality in the case when a user does not want to save their data.
+
+Save and Exit = keep the completed game/stats if already saved, then go home
+Exit Without Saving = delete this user’s latest saved game and undo latest stats update, then go home
 
 
 
