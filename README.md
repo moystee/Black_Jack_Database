@@ -80,7 +80,8 @@ This table stores each Blackjack game that was played.
 20. Add and test username functionality with:
     - Start New Game button.
     - Join Existing Game button.
-
+21. Add and test Leaderboard.
+22. Add working Exit Without Saving Button functionality.
 
 
 
