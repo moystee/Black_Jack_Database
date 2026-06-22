@@ -11,7 +11,7 @@ Build a web app for Blackjack using vanilla JavaScript, with user accounts and g
 
 ## Main Process Features
 1. Users can create an account or log in.
-2. Users can join/start a Blackjack game.
+2. Users can start a Blackjack game.
 3. Users can hit, stand, win, lose, or tie.
 4. Game history is saved.
 5. User stats are stored in the database.
