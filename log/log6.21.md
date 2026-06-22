@@ -108,6 +108,7 @@ Leaderboard Query Idea:
 Draft 5: Fixed the functionality in the case when a user does not want to save their data.
 
 Save and Exit = keep the completed game/stats if already saved, then go home
+
 Exit Without Saving = delete this user’s latest saved game and undo latest stats update, then go home
 
 **New Logic:**
