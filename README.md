@@ -6,7 +6,6 @@ Build a web app for Blackjack using vanilla JavaScript, with user accounts and g
 ## Details
 - Languages: HTML, CSS, Vanilla JavaScript
 - Database: Supabase
-- Hosting: Render
 - Version Control: GitHub
 
 ## Main Process Features
