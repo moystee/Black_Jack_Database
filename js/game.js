@@ -281,32 +281,45 @@ saveExitButton.addEventListener("click", function () {
 nosaveExitButton.addEventListener("click", async function () {
     const lastGameId = localStorage.getItem("last_game_id");
 
+    console.log("Last game id:", lastGameId);
+
     if (lastGameId) {
-        await database
+        const { error: deleteError } = await database
             .from("games")
             .delete()
             .eq("id", lastGameId);
+
+        console.log("Delete error:", deleteError);
 
         const winAdd = Number(localStorage.getItem("last_win_add"));
         const lossAdd = Number(localStorage.getItem("last_loss_add"));
         const tieAdd = Number(localStorage.getItem("last_tie_add"));
 
-        const { data } = await database
+        console.log("Undo stats:", winAdd, lossAdd, tieAdd);
+
+        const { data, error: statsError } = await database
             .from("user_stats")
             .select("*")
             .eq("user_id", localStorage.getItem("user_id"))
             .single();
 
-        await database
-            .from("user_stats")
-            .update({
-                wins: data.wins - winAdd,
-                losses: data.losses - lossAdd,
-                ties: data.ties - tieAdd,
-                games_played: data.games_played - 1,
-                updated_at: new Date().toISOString()
-            })
-            .eq("user_id", localStorage.getItem("user_id"));
+        console.log("Stats row:", data);
+        console.log("Stats error:", statsError);
+
+        if (!statsError) {
+            const { error: updateError } = await database
+                .from("user_stats")
+                .update({
+                    wins: data.wins - winAdd,
+                    losses: data.losses - lossAdd,
+                    ties: data.ties - tieAdd,
+                    games_played: data.games_played - 1,
+                    updated_at: new Date().toISOString()
+                })
+                .eq("user_id", localStorage.getItem("user_id"));
+
+            console.log("Undo update error:", updateError);
+        }
 
         localStorage.removeItem("last_game_id");
         localStorage.removeItem("last_win_add");
