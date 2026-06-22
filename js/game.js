@@ -189,11 +189,6 @@ standButton.addEventListener("click", function () {
         
         gameMessage.textContent = "Player " + hand1Result + "! " + "Player " + hand2Result + "!";
         saveCompletedGame("Player " + hand1Result + "! " + "Player " + hand2Result + "!");
-        
-        console.log("Hand 1 result:", hand1Result);
-        console.log("Hand 2 result:", hand2Result);
-        console.log("Split stats:", splitWinAdd, splitLossAdd, splitTieAdd);
-        
         updateUserStatsDirect(splitWinAdd, splitLossAdd, splitTieAdd);
         newGameButton.hidden = false;
         
