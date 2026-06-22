@@ -471,15 +471,38 @@ async function updateUserStats(resultMessage) {
     let winAdd = 0;
     let lossAdd = 0;
     let tieAdd = 0;
-
-    if (resultMessage.includes("Player wins")) {
-        winAdd = 1;
+    
+    if (resultMessage.includes("Hand 1") && resultMessage.includes("Hand 2")) {
+        if (resultMessage.includes("Hand 1 wins")) {
+            winAdd++;
+        }
+        else if (resultMessage.includes("Hand 1 loses")) {
+            lossAdd++;
+        }
+        else if (resultMessage.includes("Hand 1 pushes")) {
+            tieAdd++;
+        }
+    
+        if (resultMessage.includes("Hand 2 wins")) {
+            winAdd++;
+        }
+        else if (resultMessage.includes("Hand 2 loses")) {
+            lossAdd++;
+        }
+        else if (resultMessage.includes("Hand 2 pushes")) {
+            tieAdd++;
+        }
     }
-    else if (resultMessage.includes("Dealer wins") || resultMessage.includes("Player loses") || resultMessage.includes("Bust")) {
-        lossAdd = 1;
-    }
-    else if (resultMessage.includes("Push")) {
-        tieAdd = 1;
+    else {
+        if (resultMessage.includes("Player wins")) {
+            winAdd = 1;
+        }
+        else if (resultMessage.includes("Dealer wins") || resultMessage.includes("Player loses") || resultMessage.includes("Bust")) {
+            lossAdd = 1;
+        }
+        else if (resultMessage.includes("Push")) {
+            tieAdd = 1;
+        }
     }
 
     const { data, error } = await database
