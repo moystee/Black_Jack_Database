@@ -447,7 +447,7 @@ async function testSaveGame() {
         .from("games") // from the games table
         .insert([  // Add a new record
             {
-                user_id: "283a9c3a-f385-4a20-9f63-1976b8f31bb0",
+                user_id: localStorage.getItem("user_id"),
                 player_hand: "A♠ | K♦",
                 dealer_hand: "9♣ | 8♥",
                 result: "Player wins",
@@ -483,7 +483,7 @@ async function saveCompletedGame(resultMessage) {
         .from("games")
         .insert([
             {
-                user_id: "283a9c3a-f385-4a20-9f63-1976b8f31bb0",
+                user_id: localStorage.getItem("user_id"),
                 player_hand: savedPlayerHand,
                 dealer_hand: dealerCards.join(" | "),
                 result: resultMessage,
