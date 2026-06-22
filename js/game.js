@@ -104,6 +104,7 @@ hitButton.addEventListener("click", function () {
         splitButton.disabled = true; // cannot Split after 21
     } else {
         gameMessage.textContent = "You drew: " + newCard;
+        splitButton.disabled = true;
     }
 });
 
