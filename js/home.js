@@ -5,6 +5,7 @@ const usernameInput = document.getElementById("usernameInput");
 
 const message = document.getElementById("message");
 
+const leaderboard = document.getElementById("leaderboard");
 
 const supabaseUrl = "https://hyaapdnhcirowtwvugji.supabase.co";
 const supabaseKey = "sb_publishable_Azo3Dy_jbEb78dGL2p4TJw_sGJC4Dxm";
@@ -103,3 +104,44 @@ joinGameButton.addEventListener("click", async function () {
     message.textContent = "Joining game...";
     window.location.href = "game.html";
 });
+
+async function loadLeaderboard() {
+    const { data, error } = await database
+        .from("user_stats")
+        .select(`
+            wins,
+            losses,
+            ties,
+            games_played,
+            users (
+                username
+            )
+        `)
+        .order("wins", { ascending: false })
+        .order("ties", { ascending: false })
+        .order("losses", { ascending: true })
+        .limit(10);
+
+    if (error) {
+        console.log("Error loading leaderboard:", error);
+        leaderboard.textContent = "Error loading leaderboard.";
+        return;
+    }
+
+    leaderboard.innerHTML = "";
+
+    for (let i = 0; i < data.length; i++) {
+        const player = data[i];
+
+        leaderboard.innerHTML +=
+            (i + 1) + ". " +
+            player.users.username +
+            " - W: " + player.wins +
+            " / L: " + player.losses +
+            " / T: " + player.ties +
+            " / Games: " + player.games_played +
+            "<br>";
+    }
+}
+
+loadLeaderboard();
